@@ -6,7 +6,7 @@ services:
     environment:
       - APP_NAME=boilerworks-fastapi-micro
       - DEBUG=true
-      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/boilerworks
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/boilerworks  # DEV ONLY -- never use in production
       - REDIS_URL=redis://redis:6379/0
       - RATE_LIMIT_DEFAULT=100/minute
     depends_on:
@@ -24,8 +24,8 @@ services:
   postgres:
     image: postgres:16
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres  # DEV ONLY -- never use in production
+      POSTGRES_PASSWORD: postgres  # DEV ONLY -- never use in production
       POSTGRES_DB: boilerworks
     ports:
       - "5433:5432"
