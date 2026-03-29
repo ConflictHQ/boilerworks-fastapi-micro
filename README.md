@@ -95,13 +95,13 @@ uv run ruff format .
 
 # Run tests (requires Postgres)
 docker compose up -d postgres
-TEST_DATABASE_URL="postgresql+asyncpg://postgres:postgres@localhost:5433/boilerworks_test" uv run pytest -v --cov=app
+TEST_DATABASE_URL="postgresql+asyncpg://postgres:postgres@localhost:5432/boilerworks_test" uv run pytest -v --cov=app
 
 # Generate a new migration
-DATABASE_URL="postgresql+asyncpg://postgres:postgres@localhost:5433/boilerworks" uv run alembic revision --autogenerate -m "description"
+DATABASE_URL="postgresql+asyncpg://postgres:postgres@localhost:5432/boilerworks" uv run alembic revision --autogenerate -m "description"
 
 # Apply migrations
-DATABASE_URL="postgresql+asyncpg://postgres:postgres@localhost:5433/boilerworks" uv run alembic upgrade head
+DATABASE_URL="postgresql+asyncpg://postgres:postgres@localhost:5432/boilerworks" uv run alembic upgrade head
 ```
 
 ## Docker
@@ -120,7 +120,7 @@ docker compose logs -f api
 Services:
 - **api**: FastAPI + uvicorn on port 8000
 - **postgres**: PostgreSQL 16 on port 5433
-- **redis**: Redis 7 on port 6380
+- **redis**: Redis 7 on port 6379
 
 ## Architecture
 

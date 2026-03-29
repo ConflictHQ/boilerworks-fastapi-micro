@@ -168,5 +168,5 @@ docker compose up -d postgres redis     # Start infra only
 |---|---|
 | API | http://localhost:8000 |
 | OpenAPI docs | http://localhost:8000/docs |
-| Postgres | localhost:5433 |
-| Redis | localhost:6380 |
+| Postgres | localhost:5432 |
+| Redis | localhost:6379 |
