@@ -119,7 +119,7 @@ docker compose logs -f api
 
 Services:
 - **api**: FastAPI + uvicorn on port 8000
-- **postgres**: PostgreSQL 16 on port 5433
+- **postgres**: PostgreSQL 16 on port 5432
 - **redis**: Redis 7 on port 6379
 
 ## Architecture
